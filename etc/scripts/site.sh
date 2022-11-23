@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (c) 2018, 2022 Oracle and/or its affiliates.
+# Copyright (c) 2022 Oracle and/or its affiliates.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -39,5 +39,7 @@ fi
 readonly WS_DIR=$(cd $(dirname -- "${SCRIPT_PATH}") ; cd ../.. ; pwd -P)
 
 source "${WS_DIR}"/etc/scripts/pipeline-env.sh
+
+mvn ${MAVEN_ARGS} --version
 
 mvn ${MAVEN_ARGS} -f ${WS_DIR}/pom.xml -N site
