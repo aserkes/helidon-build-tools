@@ -1146,7 +1146,7 @@
             </activation>
             <properties>
                 <!--suppress UnresolvedMavenProperty -->
-                <jdkToolchainVersion>17</jdkToolchainVersion>
+                <jdkToolchainVersion>${maven.compiler.release}</jdkToolchainVersion>
             </properties>
             <build>
                 <plugins>
