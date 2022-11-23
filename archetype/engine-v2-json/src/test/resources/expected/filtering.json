@@ -1,0 +1,24 @@
+{
+  "expressions": {},
+  "methods": {},
+  "children": [
+    {
+      "name": "Step1",
+      "id": "1",
+      "kind": "step",
+      "children": [
+        {
+          "kind": "inputs",
+          "children": [
+            {
+              "name": "Boolean1",
+              "id": "boolean1",
+              "kind": "boolean",
+              "default": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020, 2021 Oracle and/or its affiliates.
+ * Copyright (c) 2020, 2022 Oracle and/or its affiliates.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,33 +30,39 @@ pipeline {
               try {
                 sh './etc/scripts/build.sh'
               } finally {
-                archiveArtifacts artifacts: "**/target/surefire-reports/*.txt,**/target/it/**/*.log"
-                junit testResults: '**/target/surefire-reports/*.xml,**/target/invoker-reports/*.xml'
+                archiveArtifacts artifacts: "**/target/surefire-reports/*.txt,**/target/it/**/*.log,**/target/*.vsix"
+                junit testResults: '**/target/surefire-reports/*.xml,**/target/invoker-reports/*.xml,**/target/it/projects/*/TEST-*.xml'
               }
             }
           }
         }
-        stage('build-windows'){
-          agent {
-            label "windows"
-          }
-          steps {
-            script {
-              try {
-                bat './etc/scripts/build.bat'
-              } finally {
-                archiveArtifacts artifacts: "**/target/surefire-reports/*.txt,helidon-cli/target/reports/*.txt,helidon-cli/impl/target/helidon.exe"
-                junit testResults: '**/target/surefire-reports/*.xml'
-              }
-            }
-          }
-        }
+//        stage('build-windows'){
+//          agent {
+//            label "windows"
+//          }
+//          steps {
+//            script {
+//              try {
+//                bat './etc/scripts/build.bat'
+//              } finally {
+//                archiveArtifacts artifacts: "**/target/surefire-reports/*.txt,**/target/it/**/*.log,cli/impl/target/reports/*.txt,cli/impl/target/helidon.exe"
+//                junit testResults: '**/target/surefire-reports/*.xml,**/target/invoker-reports/*.xml,**/target/it/projects/*/TEST-*.xml'
+//              }
+//            }
+//          }
+//        }
         stage('copyright'){
+          agent {
+            label "linux"
+          }
           steps {
             sh './etc/scripts/copyright.sh'
           }
         }
         stage('checkstyle'){
+          agent {
+            label "linux"
+          }
           steps {
             sh './etc/scripts/checkstyle.sh'
           }
@@ -85,7 +91,7 @@ pipeline {
             stage('cli-linux') {
               steps {
                 sh './etc/scripts/build-cli.sh --release'
-                archiveArtifacts artifacts: "helidon-cli/impl/target/helidon"
+                archiveArtifacts artifacts: "cli/impl/target/helidon"
               }
             }
             stage('cli-windows') {
@@ -94,7 +100,7 @@ pipeline {
               }
               steps {
                 bat './etc/scripts/build-cli.bat /release'
-                archiveArtifacts artifacts: "helidon-cli/impl/target/helidon.exe"
+                archiveArtifacts artifacts: "cli/impl/target/helidon.exe"
               }
             }
           }

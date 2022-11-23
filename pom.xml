@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-    Copyright (c) 2018, 2021 Oracle and/or its affiliates.
+    Copyright (c) 2018, 2022 Oracle and/or its affiliates.
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -16,7 +16,8 @@
     limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
@@ -32,7 +33,7 @@
 
     <organization>
         <name>Oracle Corporation</name>
-        <url>http://www.oracle.com/</url>
+        <url>https://www.oracle.com/</url>
     </organization>
 
     <inceptionYear>2018</inceptionYear>
@@ -103,10 +104,10 @@
         <maven.compiler.release>11</maven.compiler.release>
 
         <surefire.argLine>-Xmx1024m -Dfile.encoding=UTF-8</surefire.argLine>
-        <surefire.coverage.argline/>
+        <surefire.coverage.argLine/>
 
         <failsafe.argLine>-Xmx1024m -Dfile.encoding=UTF-8</failsafe.argLine>
-        <failsafe.coverage.argline/>
+        <failsafe.coverage.argLine/>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -116,60 +117,78 @@
 
         Changing these version requires approval for a new third party dependency!
         -->
-        <version.lib.helidon>0.9.0</version.lib.helidon>
-        <version.lib.asciidoctorj>1.6.0-RC.2</version.lib.asciidoctorj>
-        <version.lib.asciidoctorj-diagram>1.5.4.1</version.lib.asciidoctorj-diagram>
-        <version.lib.checkstyle>8.29</version.lib.checkstyle>
+        <version.lib.apache-commons>3.10</version.lib.apache-commons>
+        <version.lib.archetype-common>3.2.0</version.lib.archetype-common>
+        <version.lib.asciidoctorj>2.5.2</version.lib.asciidoctorj>
+        <version.lib.asm>7.2</version.lib.asm>
+        <version.lib.checkstyle>9.1</version.lib.checkstyle>
         <version.lib.diffutils>2.2</version.lib.diffutils>
         <version.lib.doxia>1.9.1</version.lib.doxia>
         <version.lib.freemarker>2.3.23</version.lib.freemarker>
-        <version.lib.junit>5.6.0</version.lib.junit>
+        <version.lib.graalvm-sdk>20.2.0</version.lib.graalvm-sdk>
+        <version.lib.groovy>2.4.16</version.lib.groovy>
+        <version.lib.gson>2.8.9</version.lib.gson>
         <version.lib.hamcrest>1.3</version.lib.hamcrest>
         <version.lib.invoker>3.0.1</version.lib.invoker>
+        <version.lib.jackson>2.11.0</version.lib.jackson>
+        <version.lib.jandex>2.1.1.Final</version.lib.jandex>
+        <version.lib.jansi>1.18</version.lib.jansi>
         <version.lib.jaxb-api>2.3.3</version.lib.jaxb-api>
         <version.lib.jaxb-core>2.3.0.1</version.lib.jaxb-core>
         <version.lib.jaxb-impl>2.3.3</version.lib.jaxb-impl>
+        <version.lib.jsonp-impl>1.1.4</version.lib.jsonp-impl>
+        <version.lib.junit>5.8.0-M1</version.lib.junit>
+        <version.lib.junit-platform>1.8.0-M1</version.lib.junit-platform>
+        <version.lib.junit4>4.13.1</version.lib.junit4>
+        <version.lib.lsp4j>0.9.0</version.lib.lsp4j>
+        <version.lib.lsp4mp>0.2.0</version.lib.lsp4mp>
         <version.lib.maven>3.6.2</version.lib.maven>
         <version.lib.maven-annotations>3.5</version.lib.maven-annotations>
         <version.lib.maven-archiver>3.5.0</version.lib.maven-archiver>
-        <version.lib.maven.filtering>3.1.1</version.lib.maven.filtering>
+        <version.lib.maven-artifact-transfer>0.13.1</version.lib.maven-artifact-transfer>
+        <version.lib.maven-embedder>3.6.2</version.lib.maven-embedder>
+        <version.lib.maven-filtering>3.1.1</version.lib.maven-filtering>
         <version.lib.maven-plugin-testing-harness>3.3.0</version.lib.maven-plugin-testing-harness>
-        <version.lib.mustache>0.9.6</version.lib.mustache>
-        <version.lib.plexus-utils>3.3.0</version.lib.plexus-utils>
-        <version.lib.plexus-build-api>0.0.7</version.lib.plexus-build-api>
-        <version.lib.slf4j>1.7.25</version.lib.slf4j>
-        <version.lib.spotbugs-annotations>3.1.12</version.lib.spotbugs-annotations>
-        <version.lib.jandex>2.1.1.Final</version.lib.jandex>
-        <version.lib.jansi>1.18</version.lib.jansi>
-        <version.lib.picocli.jansi>1.1.0</version.lib.picocli.jansi>
-        <version.lib.asm>7.2</version.lib.asm>
         <version.lib.maven-resolver>1.4.1</version.lib.maven-resolver>
-        <version.lib.plexus.archiver>4.1.0</version.lib.plexus.archiver>
-        <version.lib.plexus.component>2.0.0</version.lib.plexus.component>
         <version.lib.maven-settings>3.6.2</version.lib.maven-settings>
-        <version.lib.site-plugin>3.8.2</version.lib.site-plugin>
         <version.lib.mock-server>5.10.0</version.lib.mock-server>
-        <version.lib.jackson>2.11.0</version.lib.jackson>
-        <version.lib.apache.commons>3.10</version.lib.apache.commons>
+        <version.lib.mustache>0.9.6</version.lib.mustache>
+        <version.lib.picocli-jansi>1.1.0</version.lib.picocli-jansi>
+        <version.lib.plexus-archiver>4.1.0</version.lib.plexus-archiver>
+        <version.lib.plexus-build-api>0.0.7</version.lib.plexus-build-api>
+        <version.lib.plexus-component>2.0.0</version.lib.plexus-component>
+        <version.lib.plexus-java>1.1.1</version.lib.plexus-java>
+        <version.lib.plexus-utils>3.3.0</version.lib.plexus-utils>
+        <version.lib.site-plugin>3.8.2</version.lib.site-plugin>
+        <version.lib.slf4j>1.7.25</version.lib.slf4j>
+        <version.lib.snakeyaml>1.31</version.lib.snakeyaml>
+        <version.lib.spotbugs-annotations>3.1.12</version.lib.spotbugs-annotations>
+        <version.lib.wagon-http>3.3.4</version.lib.wagon-http>
+        <version.lib.commons-text>1.10.0</version.lib.commons-text>
 
         <!--
             !Version statement! - end
-            -->
+        -->
 
         <!-- maven plugin versions -->
+        <version.plugin.build-helper>3.2.0</version.plugin.build-helper>
         <version.plugin.buildnumber>1.4</version.plugin.buildnumber>
-        <version.plugin.checkstyle>3.1.0</version.plugin.checkstyle>
+        <version.plugin.checkstyle>3.1.2</version.plugin.checkstyle>
+        <version.plugin.clean>3.1.0</version.plugin.clean>
         <version.plugin.compiler>3.8.1</version.plugin.compiler>
         <version.plugin.dependency>3.0.0</version.plugin.dependency>
         <version.plugin.deploy>2.8.2</version.plugin.deploy>
         <version.plugin.directory>0.1</version.plugin.directory>
         <version.plugin.enforcer>3.0.0-M1</version.plugin.enforcer>
         <version.plugin.exec>1.6.0</version.plugin.exec>
+        <version.plugin.failsafe>3.0.0-M5</version.plugin.failsafe>
+        <version.plugin.frontend>1.11.3</version.plugin.frontend>
         <version.plugin.glassfish-copyright>2.3</version.plugin.glassfish-copyright>
         <version.plugin.gpg>1.6</version.plugin.gpg>
+        <version.plugin.jacoco>0.7.9</version.plugin.jacoco>
         <version.plugin.jar>3.0.2</version.plugin.jar>
         <version.plugin.javadoc>3.2.0</version.plugin.javadoc>
-        <version.plugin.invoker>3.2.1</version.plugin.invoker>
+        <version.plugin.invoker>3.2.2</version.plugin.invoker>
         <version.plugin.license>1.16</version.plugin.license>
         <version.plugin.plexus>2.1.0</version.plugin.plexus>
         <version.plugin.plugin-plugin>3.6.0</version.plugin.plugin-plugin>
@@ -179,25 +198,22 @@
         <version.plugin.source>3.0.1</version.plugin.source>
         <version.plugin.spotbugs>3.1.12</version.plugin.spotbugs>
         <version.plugin.surefire.provider.junit>1.0.3</version.plugin.surefire.provider.junit>
-        <version.plugin.surefire>3.0.0-M4</version.plugin.surefire>
-        <version.plugin.failsafe>3.0.0-M4</version.plugin.failsafe>
+        <version.plugin.surefire>3.0.0-M5</version.plugin.surefire>
+        <version.plugin.failsafe>3.0.0-M5</version.plugin.failsafe>
         <version.plugin.toolchains>1.1</version.plugin.toolchains>
+        <version.plugin.tycho>2.5.0</version.plugin.tycho>
+        <version.plugin.shade>3.2.4</version.plugin.shade>
+        <version.plugin.moditect>1.0.0.Beta2</version.plugin.moditect>
     </properties>
 
     <modules>
-        <module>sitegen-maven-plugin</module>
-        <module>helidon-maven-plugin</module>
-        <module>helidon-cli-maven-plugin</module>
-        <module>helidon-cli</module>
-        <module>helidon-archetype</module>
-        <module>helidon-linker</module>
-        <module>snakeyaml-codegen-maven-plugin</module>
-        <module>utils</module>
+        <module>common</module>
+        <module>maven-plugins</module>
+        <module>cli</module>
+        <module>archetype</module>
+        <module>linker</module>
         <module>licensing</module>
         <module>dev-loop</module>
-        <module>stager-maven-plugin</module>
-        <module>build-cache-maven-plugin</module>
-        <module>lsp4helidon</module>
     </modules>
 
     <build>
@@ -219,7 +235,7 @@
                     <version>${version.plugin.javadoc}</version>
                     <configuration>
                         <release>${maven.compiler.release}</release>
-                        <failOnError>false</failOnError>
+                        <failOnError>true</failOnError>
                         <quiet>true</quiet>
                         <sourceFileExcludes>
                             <sourceFileExclude>**/module-info.java</sourceFileExclude>
@@ -254,15 +270,17 @@
                     <configuration>
                         <redirectTestOutputToFile>true</redirectTestOutputToFile>
                         <!-- DO NOT override argLine instead use surefire.argLine -->
-                        <argLine>${surefire.argLine} ${surefire.coverage.argline}</argLine>
+                        <argLine>${surefire.argLine} ${surefire.coverage.argLine}</argLine>
                         <trimStackTrace>false</trimStackTrace>
                         <systemPropertyVariables>
                             <use.embedded.maven.executor>false</use.embedded.maven.executor>
+                            <io.helidon.build.fast.streams>false</io.helidon.build.fast.streams>
                             <jansi.force>true</jansi.force>
                         </systemPropertyVariables>
                         <excludes>
                             <exclude>**/*IT.java</exclude>
                         </excludes>
+                        <useModulePath>false</useModulePath>
                     </configuration>
                     <dependencies>
                         <dependency>
@@ -278,7 +296,7 @@
                     <version>${version.plugin.failsafe}</version>
                     <configuration>
                         <!-- DO NOT override argLine instead use failsafe.argLine -->
-                        <argLine>${failsafe.argLine} ${failsafe.coverage.argline}</argLine>
+                        <argLine>${failsafe.argLine} ${failsafe.coverage.argLine}</argLine>
                         <redirectTestOutputToFile>true</redirectTestOutputToFile>
                         <includes>
                             <include>**/*IT.java</include>
@@ -316,6 +334,11 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
                     <version>${version.plugin.resources}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>${version.plugin.clean}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.glassfish.copyright</groupId>
@@ -399,8 +422,8 @@
                     <configuration>
                         <serverId>ossrh</serverId>
                         <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                        <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                        <skipStagingRepositoryClose>true</skipStagingRepositoryClose>
+                        <autoReleaseAfterClose>false</autoReleaseAfterClose>
+                        <skipStagingRepositoryClose>false</skipStagingRepositoryClose>
                         <!--suppress UnresolvedMavenProperty, MavenModelInspection -->
                         <skipNexusStagingDeployMojo>${maven.deploy.skip}</skipNexusStagingDeployMojo>
                     </configuration>
@@ -423,12 +446,97 @@
                 <plugin>
                     <groupId>org.codehaus.plexus</groupId>
                     <artifactId>plexus-component-metadata</artifactId>
-                    <version>${version.lib.plexus.component}</version>
+                    <version>${version.lib.plexus-component}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-invoker-plugin</artifactId>
                     <version>${version.plugin.invoker}</version>
+                    <configuration>
+                        <addTestClassPath>true</addTestClassPath>
+                        <settingsFile>src/it/settings.xml</settingsFile>
+                        <mergeUserSettings>true</mergeUserSettings>
+                        <localRepositoryPath>${project.build.directory}/it-repo</localRepositoryPath>
+                        <!--suppress MavenModelInspection -->
+                        <ignoreFailures>${maven.test.failure.ignore}</ignoreFailures>
+                        <showErrors>true</showErrors>
+                        <!--suppress UnresolvedMavenProperty, MavenModelInspection -->
+                        <skipInvocation>${skipTests}</skipInvocation>
+                        <!--suppress UnresolvedMavenProperty, MavenModelInspection -->
+                        <skipInvocation>${skipTests}</skipInvocation>
+                        <!--suppress UnresolvedMavenProperty, MavenModelInspection -->
+                        <skipInstallation>${skipTests}</skipInstallation>
+                        <pomIncludes>
+                            <pomInclude>projects/*/pom.xml</pomInclude>
+                        </pomIncludes>
+                        <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
+                        <goals>
+                            <goal>clean</goal>
+                            <goal>install</goal>
+                        </goals>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.codehaus.groovy</groupId>
+                            <artifactId>groovy</artifactId>
+                            <version>${version.lib.groovy}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>${version.plugin.build-helper}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${version.plugin.jacoco}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.eclipse.tycho</groupId>
+                    <artifactId>tycho-maven-plugin</artifactId>
+                    <version>${version.plugin.tycho}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.eclipse.tycho</groupId>
+                    <artifactId>target-platform-configuration</artifactId>
+                    <version>${version.plugin.tycho}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.eclipse.tycho</groupId>
+                    <artifactId>tycho-compiler-plugin</artifactId>
+                    <version>${version.plugin.tycho}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.eclipse.tycho</groupId>
+                    <artifactId>tycho-source-plugin</artifactId>
+                    <version>${version.plugin.tycho}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.eclipse.tycho</groupId>
+                    <artifactId>tycho-surefire-plugin</artifactId>
+                    <version>${version.plugin.tycho}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.eclipse.tycho</groupId>
+                    <artifactId>tycho-packaging-plugin</artifactId>
+                    <version>${version.plugin.tycho}</version>
+                </plugin>
+                <plugin>
+                    <groupId>com.github.eirslett</groupId>
+                    <artifactId>frontend-maven-plugin</artifactId>
+                    <version>${version.plugin.frontend}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>${version.plugin.shade}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.moditect</groupId>
+                    <artifactId>moditect-maven-plugin</artifactId>
+                    <version>${version.plugin.moditect}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -506,11 +614,9 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>io.helidon</groupId>
-                <artifactId>helidon-bom</artifactId>
-                <version>${version.lib.helidon}</version>
-                <type>pom</type>
-                <scope>import</scope>
+                <groupId>org.yaml</groupId>
+                <artifactId>snakeyaml</artifactId>
+                <version>${version.lib.snakeyaml}</version>
             </dependency>
             <dependency>
                 <groupId>jakarta.xml.bind</groupId>
@@ -526,6 +632,11 @@
                 <groupId>com.sun.xml.bind</groupId>
                 <artifactId>jaxb-impl</artifactId>
                 <version>${version.lib.jaxb-impl}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish</groupId>
+                <artifactId>javax.json</artifactId>
+                <version>${version.lib.jsonp-impl}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven</groupId>
@@ -565,7 +676,7 @@
             <dependency>
                 <groupId>org.apache.maven.shared</groupId>
                 <artifactId>maven-filtering</artifactId>
-                <version>${version.lib.maven.filtering}</version>
+                <version>${version.lib.maven-filtering}</version>
             </dependency>
             <dependency>
                 <groupId>org.sonatype.plexus</groupId>
@@ -579,13 +690,18 @@
             </dependency>
             <dependency>
                 <groupId>org.codehaus.plexus</groupId>
+                <artifactId>plexus-java</artifactId>
+                <version>${version.lib.plexus-java}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.plexus</groupId>
                 <artifactId>plexus-utils</artifactId>
                 <version>${version.lib.plexus-utils}</version>
             </dependency>
             <dependency>
                 <groupId>org.codehaus.plexus</groupId>
                 <artifactId>plexus-archiver</artifactId>
-                <version>${version.lib.plexus.archiver}</version>
+                <version>${version.lib.plexus-archiver}</version>
             </dependency>
             <dependency>
                 <groupId>org.asciidoctor</groupId>
@@ -596,11 +712,6 @@
                 <groupId>org.asciidoctor</groupId>
                 <artifactId>asciidoctorj</artifactId>
                 <version>${version.lib.asciidoctorj}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.asciidoctor</groupId>
-                <artifactId>asciidoctorj-diagram</artifactId>
-                <version>${version.lib.asciidoctorj-diagram}</version>
             </dependency>
             <dependency>
                 <groupId>org.freemarker</groupId>
@@ -638,6 +749,36 @@
                 <version>${version.lib.junit}</version>
             </dependency>
             <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${version.lib.junit4}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${version.lib.junit}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-params</artifactId>
+                <version>${version.lib.junit}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.platform</groupId>
+                <artifactId>junit-platform-reporting</artifactId>
+                <version>${version.lib.junit-platform}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.platform</groupId>
+                <artifactId>junit-platform-engine</artifactId>
+                <version>${version.lib.junit-platform}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.platform</groupId>
+                <artifactId>junit-platform-launcher</artifactId>
+                <version>${version.lib.junit-platform}</version>
+            </dependency>
+            <dependency>
                 <groupId>org.hamcrest</groupId>
                 <artifactId>hamcrest-all</artifactId>
                 <version>${version.lib.hamcrest}</version>
@@ -665,7 +806,7 @@
             <dependency>
                 <groupId>info.picocli</groupId>
                 <artifactId>picocli-jansi-graalvm</artifactId>
-                <version>${version.lib.picocli.jansi}</version>
+                <version>${version.lib.picocli-jansi}</version>
             </dependency>
             <dependency>
                 <groupId>org.ow2.asm</groupId>
@@ -675,7 +816,7 @@
             <dependency>
                 <groupId>org.codehaus.plexus</groupId>
                 <artifactId>plexus-component-annotations</artifactId>
-                <version>${version.lib.plexus.component}</version>
+                <version>${version.lib.plexus-component}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.maven.doxia</groupId>
@@ -698,33 +839,111 @@
                 <version>${version.lib.invoker}</version>
             </dependency>
             <dependency>
-                <groupId>io.helidon.config</groupId>
-                <artifactId>helidon-config-test-infrastructure</artifactId>
-                <version>${version.lib.helidon}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
                 <groupId>org.mock-server</groupId>
                 <artifactId>mockserver-netty</artifactId>
                 <version>${version.lib.mock-server}</version>
-                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
                 <version>${version.lib.jackson}</version>
-                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>${version.lib.apache.commons}</version>
-                <scope>test</scope>
+                <version>${version.lib.apache-commons}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.lsp4j</groupId>
+                <artifactId>org.eclipse.lsp4j</artifactId>
+                <version>${version.lib.lsp4j}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.google.errorprone</groupId>
+                        <artifactId>error_prone_annotations</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>animal-sniffer-annotations</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.lsp4j</groupId>
+                <artifactId>org.eclipse.lsp4j.jsonrpc</artifactId>
+                <version>${version.lib.lsp4j}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.lsp4mp</groupId>
+                <artifactId>org.eclipse.lsp4mp.ls</artifactId>
+                <version>${version.lib.lsp4mp}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.lsp4mp</groupId>
+                <artifactId>org.eclipse.lsp4mp.ls</artifactId>
+                <classifier>tests</classifier>
+                <version>${version.lib.lsp4mp}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${version.lib.gson}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.graalvm.sdk</groupId>
+                <artifactId>graal-sdk</artifactId>
+                <version>${version.lib.graalvm-sdk}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.shared</groupId>
+                <artifactId>maven-artifact-transfer</artifactId>
+                <version>${version.lib.maven-artifact-transfer}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.archetype</groupId>
+                <artifactId>archetype-common</artifactId>
+                <version>${version.lib.archetype-common}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-http</artifactId>
+                <version>${version.lib.wagon-http}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.resolver</groupId>
+                <artifactId>maven-resolver-impl</artifactId>
+                <version>${version.lib.maven-resolver}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.resolver</groupId>
+                <artifactId>maven-resolver-transport-wagon</artifactId>
+                <version>${version.lib.maven-resolver}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.resolver</groupId>
+                <artifactId>maven-resolver-connector-basic</artifactId>
+                <version>${version.lib.maven-resolver}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven</groupId>
+                <artifactId>maven-embedder</artifactId>
+                <version>${version.lib.maven-embedder}</version>
+            </dependency>
+           <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-text</artifactId>
+                <version>${version.lib.commons-text}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
 
     <profiles>
+        <profile>
+            <id>ide-support</id>
+            <modules>
+                <module>ide-support</module>
+            </modules>
+        </profile>
         <profile>
             <id>javadoc</id>
             <build>
@@ -823,6 +1042,27 @@
                                 </configuration>
                             </execution>
                         </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>debug-invoker</id>
+            <activation>
+                <property>
+                    <name>env.MAVEN_DEBUG_OPTS</name>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-invoker-plugin</artifactId>
+                        <configuration>
+                            <environmentVariables>
+                                <MAVEN_DEBUG_OPTS>-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=*:8001</MAVEN_DEBUG_OPTS>
+                            </environmentVariables>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
