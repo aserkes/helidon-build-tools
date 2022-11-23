@@ -2,7 +2,7 @@ name: "Validate PR"
 
 on:
   pull_request:
-    branches: [ "master", "master-github_actions_test" ]
+    branches: [ "master", "master-github_actions_test", "lsp4helidon" ]
   #to run manually
   workflow_dispatch:
 
