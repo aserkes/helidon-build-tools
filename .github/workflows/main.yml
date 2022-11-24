@@ -11,7 +11,7 @@ env:
   JAVA_DISTRO: 'temurin'
   HELIDON_PIPELINES: 'true'
   MAVEN_HTTP_ARGS: '-Dmaven.wagon.httpconnectionManager.ttlSeconds=60 -Dmaven.wagon.http.retryHandler.count=3'
-#  MAVEN_TOOLCHAIN_ARGS: '-Djdk.toolchain.version='${{ JAVA_VERSION }}
+  MAVEN_TOOLCHAIN_ARGS: ${{ format('-Djdk.toolchain.version={0}', ${{ JAVA_VERSION }}) }}
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
