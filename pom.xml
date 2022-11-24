@@ -1145,8 +1145,8 @@
                 </file>
             </activation>
             <properties>
-                <!--suppress UnresolvedMavenProperty  -->
-                <jdkToolchainVersion>${maven.compiler.target}</jdkToolchainVersion>
+                <!--suppress UnresolvedMavenProperty -->
+                <jdkToolchainVersion>${jdk.toolchain.version}</jdkToolchainVersion>
             </properties>
             <build>
                 <plugins>
