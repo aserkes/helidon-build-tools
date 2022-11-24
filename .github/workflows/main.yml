@@ -10,6 +10,8 @@ env:
   JAVA_VERSION: '17'
   JAVA_DISTRO: 'temurin'
   HELIDON_PIPELINES: 'true'
+  MAVEN_HTTP_ARGS: '-Dmaven.wagon.httpconnectionManager.ttlSeconds=60 -Dmaven.wagon.http.retryHandler.count=3'
+  MAVEN_TOOLCHAIN_ARGS: '-Djdk.toolchain.version='${{ JAVA_VERSION }}
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -17,13 +19,14 @@ concurrency:
 
 jobs:
   copyright:
-    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v3.6.0
         with:
           distribution: ${{ env.JAVA_DISTRO }}
           java-version: ${{ env.JAVA_VERSION }}
@@ -31,11 +34,12 @@ jobs:
       - name: Copyright
         run: etc/scripts/copyright.sh
   checkstyle:
-    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v3.6.0
         with:
           distribution: ${{ env.JAVA_DISTRO }}
           java-version: ${{ env.JAVA_VERSION }}
@@ -54,30 +58,31 @@ jobs:
 #          cache: maven
 #      - name: Docs
 #        run: etc/scripts/site.sh
-  spotbugs:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          distribution: ${{ env.JAVA_DISTRO }}
-          java-version: ${{ env.JAVA_VERSION }}
-          cache: maven
-      - name: Spotbugs
-        run: etc/scripts/spotbugs.sh
+#  spotbugs:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v3
+#      - name: Set up JDK 17
+#        uses: actions/setup-java@v3
+#        with:
+#          distribution: ${{ env.JAVA_DISTRO }}
+#          java-version: ${{ env.JAVA_VERSION }}
+#          cache: maven
+#      - name: Spotbugs
+#        run: etc/scripts/spotbugs.sh
   build:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
         include:
-          - os: ubuntu-latest
+          - os: ubuntu-20.04
             build_script: etc/scripts/build.sh
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v3.6.0
         with:
           distribution: ${{ env.JAVA_DISTRO }}
           java-version: ${{ env.JAVA_VERSION }}
