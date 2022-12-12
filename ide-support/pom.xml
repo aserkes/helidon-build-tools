@@ -29,7 +29,7 @@
     <artifactId>helidon-ide-support-project</artifactId>
     <packaging>pom</packaging>
     <name>Helidon IDE Support Project</name>
-    <description>Helidon IDE Support Project</description>
+    <description>Helidon IDE Support Project (VSCode)</description>
 
     <properties>
         <maven.deploy.skip>true</maven.deploy.skip>
